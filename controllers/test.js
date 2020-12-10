@@ -8,8 +8,13 @@ const nightmare = Nightmare({
     show: false
 });
 
+var Xvfb = require('xvfb');
+var xvfb = new Xvfb();
+
+
 exports.testEndpoint = (req, res) => {
 
+    xvfb.startSync();
     scrappingData = [];
 
     console.log("goto url");
