@@ -12,8 +12,14 @@ exports.testEndpoint = (req, res) => {
 
     scrappingData = [];
 
+    console.log("goto url");
     nightmare.goto('https://www.google.com/doubleclick/preview/dynamic/previewsheet/CLqMggUQk_vjBBigzNMcIIvrGw');
+
+    console.log("waiting");
+
     nightmare.wait('cps-dynamic-preview-frame')
+
+    console.log("evaluating");
 
     nightmare.evaluate(() => document.querySelector('body').innerHTML);
     nightmare.then(result => {
