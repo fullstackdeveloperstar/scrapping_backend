@@ -21,7 +21,7 @@ module.exports = function (app) {
             res.locals.connection = mysql.createConnection({
                 host: 'localhost',
                 user: 'root',
-                password: 'password',
+                password: '',
                 database: 'scrapping'
             });
 
